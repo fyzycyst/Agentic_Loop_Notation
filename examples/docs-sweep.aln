@@ -1,0 +1,25 @@
+loop DocsSweep(repo):
+  goal: documentation accurately reflects current implementation
+  context:
+    read codebase, README, docs, examples, changelog, and repository guidance
+  authority:
+    may edit documentation and examples
+    may not change product behavior, public APIs, tests, secrets, or deployment configuration
+  cycle:
+    observe: find one stale, missing, or misleading documentation area
+    act: update the smallest coherent documentation section
+    verify:
+      run doc checks, link checks, examples, and relevant tests when available
+    decide:
+      keep if: docs are more accurate and checks pass
+      revert if: checks fail, examples break, or product behavior changes
+      escalate if: product behavior is ambiguous or authority is insufficient
+  stop:
+    success if: no material documentation drift remains
+    no_op if: docs already match implementation
+    stall if: two passes find no new actionable drift
+    budget if: iteration, time, or token budget is reached
+    blocked if: current behavior cannot be determined
+  return:
+    changed files, evidence, remaining uncertainties, and PR summary
+

@@ -1,0 +1,26 @@
+tournament QueryOptimizationTournament(query):
+  goal: reduce latency without changing query behavior
+  context:
+    query text, schema, query plan, baseline latency, test data, correctness tests, and performance budget
+  authority:
+    may create isolated candidate changes for query, index, cache, or ORM strategy exploration
+    may not alter product semantics, data retention, security policy, or production infrastructure without approval
+  strategies:
+    A: add or adjust indexes
+    B: rewrite ORM or SQL shape
+    C: add cache or materialized result
+  transaction:
+    run each strategy in an isolated worktree or equivalent rollback boundary
+  verify:
+    run the same benchmark and regression tests for each strategy
+  select:
+    choose the best latency improvement that preserves behavior with the lowest complexity and risk
+  stop:
+    success if: one strategy meets latency threshold and regression tests pass
+    reject if: no strategy improves enough to justify complexity
+    budget if: time, token, cost, or iteration budget is reached
+    blocked if: benchmark environment, data access, or approval is missing
+    escalate if: improvement requires product, data-model, infrastructure, or risk decision
+  return:
+    comparison table, winning diff, rejected alternatives, benchmark evidence, regression evidence, and rollback notes
+

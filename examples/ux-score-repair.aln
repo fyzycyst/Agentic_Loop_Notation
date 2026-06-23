@@ -1,0 +1,32 @@
+loop UXScoreRepair(flow):
+  goal: user flow reaches defined completion and quality threshold
+  context:
+    URL, user task, supported screen sizes, modes, rubric, product constraints, and regression checks
+  authority:
+    may edit UI code, copy, spacing, layout, and non-contract visual behavior
+    may not change authentication, billing, data model, public API, security policy, or analytics semantics without approval
+  cycle:
+    observe:
+      start from fresh browser state
+      complete the flow
+      capture screens
+      score each screen with the same checklist
+    act:
+      improve the weakest safe area with one bounded change
+    verify:
+      rerun the full flow
+      rescore screens with the same checklist
+      run regression checks
+    decide:
+      keep if: score improves and no regression appears
+      revert if: score drops, completion breaks, or behavior changes outside authority
+      escalate if: product, security, access, or data decision is needed
+  stop:
+    success if: completion criterion and quality threshold are met
+    no_op if: flow already meets the threshold
+    stall if: two full passes show no score gain
+    budget if: time, token, or iteration budget is reached
+    blocked if: access, environment, test data, or approval is unavailable
+  return:
+    scores, screenshots, changed files, checks run, stop reason, and next action
+

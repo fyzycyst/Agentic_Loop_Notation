@@ -1,0 +1,31 @@
+loop CompletionContract(task):
+  goal: complete the task only when every required outcome is proved
+  context:
+    read task, repository rules, tests, deployment requirements, and acceptance criteria
+  authority:
+    may perform work required by the task within stated repository rules
+    may not claim completion without direct evidence
+    may not override approval, safety, or sandbox boundaries
+  state:
+    requirements_table = []
+  before_act:
+    decompose task into required outcomes
+    define evidence required for each outcome
+  cycle:
+    observe: inspect current requirement status
+    act: complete one bounded requirement or collect missing evidence
+    verify: collect direct evidence for that requirement
+    decide:
+      mark proved if: evidence directly supports the requirement
+      mark weak if: evidence is indirect, partial, or environment-limited
+      mark contradicted if: result conflicts with the requirement
+      escalate if: required evidence is unavailable or authority is unclear
+  stop:
+    success if: every requirement is proved
+    no_op if: every requirement was already proved before acting
+    stall if: two passes produce no stronger evidence
+    budget if: time, token, or iteration budget is reached before proof
+    blocked if: any requirement needs human input, missing access, or permission
+  return:
+    requirement-to-evidence table, status, owner, risks, and next action
+
