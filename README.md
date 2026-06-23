@@ -105,6 +105,10 @@ ALN v0.1 was motivated in part by the growing body of practical loop examples in
 
 Several examples in this repository are ALN translations or adaptations of Loop Library examples. See [docs/examples.md](docs/examples.md) for lineage and acknowledgements.
 
+## Citation
+
+If you use ALN in writing, tooling, research, videos, or examples, please cite this repository. See [CITATION.cff](CITATION.cff) and [NOTICE.md](NOTICE.md).
+
 ## Contributing Examples
 
 Good ALN examples should be small, inspectable, and honest about authority. Prefer one clear target, one fixed verifier, explicit stop rules, and concrete return artifacts.
@@ -117,14 +121,18 @@ When adding an example, include:
 4. The success and stop rules.
 5. The evidence returned to the human.
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution checklist.
+
 ## Safety Note
 
 ALN describes control flow. It does not grant permission.
 
 An ALN loop must not be treated as authorization to deploy, delete, spend money, contact third parties, expose private data, alter production systems, or override repository rules. Human gates, sandboxing, approvals, and local policies still apply.
 
+To report unsafe loop wording or examples, see [SECURITY.md](SECURITY.md).
+
 ## License
 
 ALN is licensed under [Creative Commons Attribution 4.0 International](LICENSE). You can share and adapt it freely, including for commercial use, as long as you credit the project and link back when reasonably possible.
 
-If ALN is useful to you, please consider starring the repository so others can find it.
+If ALN is useful to you, please consider starring the repository so others can find it. Starring is appreciated, not required by the license.

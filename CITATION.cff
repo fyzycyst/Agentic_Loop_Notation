@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use Agentic Loop Notation (ALN), please cite this repository."
+title: "Agentic Loop Notation (ALN)"
+version: "0.1"
+date-released: 2026-06-23
+authors:
+  - alias: "fyzycyst"
+url: "https://github.com/fyzycyst/Agentic_Loop_Notation"
+repository-code: "https://github.com/fyzycyst/Agentic_Loop_Notation"
+license: "CC-BY-4.0"
+keywords:
+  - ai-agents
+  - agentic-ai
+  - prompt-engineering
+  - verification
+  - notation
+
