@@ -99,6 +99,12 @@ Hook         -> interrupt or guardrail
 
 See [docs/codex-mapping.md](docs/codex-mapping.md) and [skills/aln-loop-designer/SKILL.md](skills/aln-loop-designer/SKILL.md).
 
+## Acknowledgements
+
+ALN v0.1 was motivated in part by the growing body of practical loop examples in the [Forward Future Loop Library](https://signals.forwardfuture.ai/loop-library/), which collects repeatable AI-agent workflows with checks and stopping conditions.
+
+Several examples in this repository are ALN translations or adaptations of Loop Library examples. See [docs/examples.md](docs/examples.md) for lineage and acknowledgements.
+
 ## Contributing Examples
 
 Good ALN examples should be small, inspectable, and honest about authority. Prefer one clear target, one fixed verifier, explicit stop rules, and concrete return artifacts.

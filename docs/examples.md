@@ -2,6 +2,17 @@
 
 This page explains the initial examples in `examples/`. Each example is intentionally small and readable.
 
+## Lineage and Acknowledgements
+
+These examples were reviewed against the [Forward Future Loop Library](https://signals.forwardfuture.ai/loop-library/), a public collection of practical AI-agent loops with checks and stopping conditions.
+
+- `DocsSweep` is an ALN translation/adaptation of Forward Future's [The docs sweep](https://signals.forwardfuture.ai/loop-library/loops/overnight-docs-sweep/) by Matthew Berman.
+- `CompletionContract` is an ALN translation/adaptation of [The Codex completion-contract loop](https://signals.forwardfuture.ai/loop-library/loops/codex-completion-contract-loop/) by 3goblack (@Dis_Trackted).
+- `UXScoreRepair` is an ALN translation/adaptation of [The UI/UX Score Loop](https://signals.forwardfuture.ai/loop-library/loops/ui-ux-score-loop/) by Hayden Cassar (@hcassar93).
+- `QueryOptimizationTournament` is an ALN synthesis inspired by Loop Library patterns such as fixed verifiers, isolated experiments, repeatable benchmarks, and tournament/arena-style comparison. It is not presented as a direct port of one specific Loop Library entry.
+
+The purpose of these examples is to show how ALN makes the hidden control structure of existing loop-style workflows explicit: goal, context, authority, cycle, verifier, stop rules, and return artifacts.
+
 ## Documentation Sweep
 
 File: [`examples/docs-sweep.aln`](../examples/docs-sweep.aln)
@@ -65,4 +76,3 @@ Use this checklist before adding an example:
 - Can the loop revert or escalate?
 - Are success, no-op, stall, budget, and blocked states distinct?
 - Does the loop return evidence a human can inspect?
-
