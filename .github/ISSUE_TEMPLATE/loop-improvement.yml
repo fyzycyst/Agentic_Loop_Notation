@@ -1,0 +1,54 @@
+name: Loop, docs, or safety improvement
+description: Suggest a focused improvement to ALN docs, examples, skills, metadata, attribution, or safety boundaries.
+title: "[Improvement]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep ALN small, inspectable, and safe to reuse. Please do not include secrets, credentials, private data, or exploit details.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the repository does this affect?
+      options:
+        - ALN notation
+        - Example loop
+        - Loop Doctor
+        - Codex mapping or skill
+        - Contribution or repository metadata
+        - Citation, license, notice, or acknowledgement
+        - Safety boundary
+        - Other docs
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: What is the current gap?
+      description: Point to the file, example, wording, or workflow that seems unclear, stale, unsafe, or missing.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed bounded improvement
+      description: Describe the smallest change that would make the repository clearer, safer, or easier to contribute to.
+    validations:
+      required: true
+  - type: textarea
+    id: verifier
+    attributes:
+      label: How could this be checked?
+      description: Name the documentation check, link check, Loop Doctor criterion, example review, or other evidence that would show the improvement worked.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This report does not include secrets, credentials, private data, or exploit details.
+          required: true
+        - label: This request does not treat ALN as authorization to deploy, delete, spend money, contact third parties, or override human approval.
+          required: true
